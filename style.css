@@ -100,3 +100,8 @@ body, html {
 .next-photo {
     right: 0;
 }
+.qr-code-image {
+    max-width: 30%; /* Set the maximum width of the image to the width of its container */
+    height: auto; /* Maintain the aspect ratio */
+ 
+}
