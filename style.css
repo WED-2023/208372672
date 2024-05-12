@@ -1,7 +1,102 @@
-#menu
-{
-	position: fixed;
-	width: 100%;
-	height: 35px;
-	background: white;
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the menu */
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+}
+
+#menu li {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+#menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style the sections */
+.section {
+    padding: 50px 0; /* Adjust as needed */
+    text-align: center;
+    /* position: relative; Remove absolute positioning */
+}
+
+.section h2 {
+    /* margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */ /* Remove absolute positioning */
+    font-size: 2.5em; /* Adjust font size */
+}
+
+/* Different background colors for each section */
+#about {
+    background-color: #ffc107; /* Yellow */
+}
+
+#photos {
+    background-color: #2196f3; /* Blue */
+}
+
+#playlist {
+    background-color: #4caf50; /* Green */
+}
+
+#like {
+    background-color: #f44336; /* Red */
+}
+
+#qrcoder {
+    background-color: #9c27b0; /* Purple */
+}
+
+#spa {
+    background-color: #ff5722; /* Orange */
+}
+
+#contact {
+    background-color: #607d8b; /* Gray */
+}
+
+/* Additional styles for photo navigation */
+.photo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.photo-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.prev-photo, .next-photo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.prev-photo {
+    left: 0;
+}
+
+.next-photo {
+    right: 0;
 }
