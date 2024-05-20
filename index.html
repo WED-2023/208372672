@@ -16,22 +16,12 @@
 		  
 <section id="about" class="section">
 <br/>
-about me
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<div class="about me">
+    <h2>about me</h2>
+    <p>When I was a child, my family and I moved from Turkey to South Tel Aviv. We lived in a shared apartment with other families, which was quite crowded. My father was a tailor, and I spent a lot of my childhood working in his shop, learning the trade.</p>
+    <p>At the age of 21, I got married and moved to Bat Yam, where my husband and I started our own family and raised two children. For many years, I worked in the diamond industry, cutting and polishing diamonds with precision and dedication.</p>
+    <p>Now, I live happily in Ramat Gan and have four wonderful grandchildren who bring me immense joy.</p>
+</div>
 <br/>
 <br/>
 <br/>
@@ -40,18 +30,23 @@ about me
 <section id="photos" class="section">
 <h2>My Photos</h2>
     <div class="photo-container">
-        <img src="C:\Users\user\Pictures\WhatsApp Image 2022-05-29 at 5.25.25 PM.jpeg" alt="Photo 1">
-        <img src="C:\Users\user\Pictures\wedding-owls-vector-3274919.jpg" alt="Photo2">
+        <img src="photos/one.jpg" alt="Photo 1">
+        <img src="photos/two.jpg" alt="Photo 2">
+        <img src="photos/three.jpg" alt="Photo 3">
+        <img src="photos/four.jpg" alt="Photo 4">
+        <img src="photos/six.jpg" alt="Photo 5">
+        <img src="photos/seven.jpg" alt="Photo 7">
+        <img src="photos/eight.jpg" alt="Photo 8">
+        <img src="photos/nine.jpg" alt="Photo 9">
+        <img src="photos/ten.jpg" alt="Photo 10">
+        <img src="photos/eleven.jpg" alt="Photo 11">
+        <img src="photos/twelve.jpg" alt="Photo 12">
+        <img src="photos/therteen.jpg" alt="Photo 13">
+        <img src="photos/fourteen.jpg" alt="Photo 14">
+        <img src="photos/fivteen.jpg" alt="Photo 15">
+        <img src="photos/sixteen.jpeg" alt="Photo 16">
         <button class="prev-photo">&#10094;</button>
         <button class="next-photo">&#10095;</button>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
@@ -69,32 +64,15 @@ about me
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 </section>
 
 <section id="like" class="section">
 <br/>
-give me a like
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<h2>Like my page</h2>
+        <button class="like-button">
+            <span class="thumbs-up">👍</span>
+            <span class="like-count">0</span>
+        </button>
 <br/>
 <br/>
 <br/>
@@ -106,17 +84,6 @@ give me a like
 <section id="qrcoder" class="section">
 <h2>QR Code</h2>
     <img src="C:\Users\user\Downloads\qr-code.png" alt="QR Code" class="qr-code-image">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
@@ -150,12 +117,23 @@ ans
 
 <section id="contact" class="section">
 <br/>
-contact me
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<h2>Contact Me</h2>
+<form id="contactForm">
+    <label for="senderEmail">Your Email:</label><br>
+    <input type="email" id="senderEmail" name="senderEmail" required><br><br>
+
+    <label for="messageBody">Message:</label><br>
+    <textarea id="messageBody" name="messageBody" rows="4" required></textarea><br><br>
+
+    <label for="smileySelect">Select a Smiley:</label><br>
+    <select id="smileySelect" name="smileySelect">
+        <option value="😊">😊</option>
+        <option value="😃">😃</option>
+        <option value="😁">😁</option>
+        <option value="😄">😄</option>
+    </select><br><br>
+
+    <button type="submit" id="sendButton">Send</button>
 <br/>
 <br/>
 <br/>
@@ -170,6 +148,63 @@ contact me
 <br/>
 <br/>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const likeButton = document.querySelector(".like-button");
+    const likeCount = document.querySelector(".like-count");
+
+    // Initialize the like count from local storage if available
+    let count = localStorage.getItem('likeCount') || 0;
+    likeCount.textContent = count;
+
+    // Check if the button has been clicked already in this session
+    const hasLiked = sessionStorage.getItem('hasLiked');
+
+    if (hasLiked) {
+        likeButton.disabled = true;
+    }
+
+    likeButton.addEventListener("click", function() {
+        // Increment the like count
+        count++;
+        likeCount.textContent = count;
+
+        // Disable the button to prevent multiple likes in the same session
+        likeButton.disabled = true;
+
+        // Save the like status in session storage and the count in local storage
+        sessionStorage.setItem('hasLiked', 'true');
+        localStorage.setItem('likeCount', count);
+    });
+});
+
+</script>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form data
+        const senderEmail = document.getElementById("senderEmail").value;
+        const messageBody = document.getElementById("messageBody").value;
+        const selectedSmiley = document.getElementById("smileySelect").value;
+
+        // Compose email body with selected smiley
+        const emailBody = `Hello, \n\nThis is a message from ${senderEmail}.\n\nMessage Body: \n${messageBody}\n\nSelected Smiley: ${selectedSmiley}`;
+
+        // You can replace the following URL with your own backend URL to handle the email sending process
+        const emailSendingURL = "roeeyls1234@gmail.com";
+
+        // Send the email via AJAX (You need to implement the backend part to handle this)
+        // For demonstration purpose, I'll just log the email body
+        console.log("Sending email with body:\n", emailBody);
+
+        // Optionally, you can also redirect the user to a "Thank You" page after form submission
+        // window.location.href = "thankyou.html";
+    });
+</script>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
