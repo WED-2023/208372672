@@ -2,13 +2,13 @@
 /* Apply a background image to the entire page */
 body {
     background-image: url('photos/cover.jpg');
-    background-size: cover; /* Ensures the image covers the entire page */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Ensures the image does not repeat */
-    background-attachment: fixed; /* Makes the background image stay fixed while scrolling */
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
     margin: 0;
     padding: 0;
-    color: #080808; /* Ensures text is readable on the background */
+    color: #080808; 
 }
 /* Style the menu */
 #menu {
@@ -33,24 +33,19 @@ body {
 
 /* Style the sections */
 .section {
-    padding: 50px 0; /* Adjust as needed */
+    padding: 50px 0; 
     text-align: center;
-    /* position: relative; Remove absolute positioning */
+    
 }
 
 .section h2 {
-    /* margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */ /* Remove absolute positioning */
+
     font-size: 2.5em; /* Adjust font size */
 }
 
-/* Different background colors for each section */
 
 
-/* Additional styles for photo navigation */
+
 .photo-container {
     position: relative;
     display: inline-block;
@@ -82,8 +77,8 @@ body {
     right: 0;
 }
 .qr-code-image {
-    max-width: 30%; /* Set the maximum width of the image to the width of its container */
-    height: auto; /* Maintain the aspect ratio */
+    max-width: 30%; 
+    height: auto; 
  
 }
 .like-button {
