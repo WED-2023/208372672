@@ -94,17 +94,67 @@
 
 <section id="spa" class="section">
 <br/>
-ans
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<div class="container">
+    <h1>Main Differences between Web1, Web2, and Web3:</h1>
+        <div>
+            <h2>Web1:</h2>
+            <div>
+                <p>
+                    Web1, was characterized by primarily static web pages.
+                    Users would mainly consume information from these pages without much interaction or participation.
+                    It was the early stage of the internet where the focus was on presenting information to users.
+                </p>
+            </div>
+        </div>
+        <div>
+            <h2>Web2:</h2>
+            <div>
+                <p>
+                    Web2, brought about dynamic and interactive web pages.
+                    It facilitated user-generated content through social media platforms, forums, and blogs.
+                    This era marked a shift towards greater user engagement and collaboration,
+                    where users could interact with each other and contribute their content to the web.
+                </p>
+            </div>
+        </div>
+        <div>
+            <h2>Web3:</h2>
+            <div>
+                <p>
+                    Web3, represents a decentralized and distributed web.
+                    It emphasizes privacy, security, and user control over data.
+                    This evolution integrates blockchain technology and smart contracts,
+                    offering transparent and trustless transactions while empowering users
+                    to have ownership and sovereignty over their digital assets and identities.
+                </p>
+            </div>
+        </div>
+    <h1>Explanation of Differences with Use Case</h1>
+    <div>
+        <h2>Web1:</h2>
+        <div>
+            <div>On Web1, buying a product online would typically involve visiting static web pages of e-commerce stores.</div>
+            <div>Users would browse through product listings and make purchases by providing their information through basic forms.</div>
+            <div>Example: Visiting a static online store, selecting a product, and filling out a form with shipping and payment details.</div>
+        </div>
+    </div>
+    <div>
+        <h2>Web2:</h2>
+        <div>
+            <div>In Web2, the online shopping experience becomes more interactive and social.</div>
+            <div>Users can read and leave reviews, interact with other shoppers through comments or forums, and receive personalized recommendations based on their browsing history.</div>
+            <div>Example: Shopping on an e-commerce platform where users can read product reviews from other customers, ask questions, and engage in discussions about products.</div>
+        </div>
+    </div>
+    <div>
+        <h2>Web3:</h2>
+        <div>
+            <div>With Web3, the online shopping experience can be decentralized and powered by blockchain technology.</div>
+            <div>Users have more control over their data and transactions, with options for secure peer-to-peer payments and transparent supply chain tracking.</div>
+            <div>Example: Using a decentralized marketplace built on blockchain where users can buy products directly from sellers, with transactions recorded on the blockchain for transparency and security.</div>
+        </div>
+    </div>
+</div>
 <br/>
 <br/>
 <br/>
@@ -134,14 +184,6 @@ ans
     </select><br><br>
 
     <button type="submit" id="sendButton">Send</button>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
@@ -193,6 +235,13 @@ ans
         // Compose email body with selected smiley
         const emailBody = `Hello, \n\nThis is a message from ${senderEmail}.\n\nMessage Body: \n${messageBody}\n\nSelected Smiley: ${selectedSmiley}`;
 
+        // Display confirmation message
+        alert("Mail has been sent!");
+
+        // Clear input fields
+        document.getElementById("senderEmail").value = "";
+        document.getElementById("messageBody").value = "";
+
         // You can replace the following URL with your own backend URL to handle the email sending process
         const emailSendingURL = "roeeyls1234@gmail.com";
 
@@ -204,6 +253,7 @@ ans
         // window.location.href = "thankyou.html";
     });
 </script>
+
 
 
 <script>
